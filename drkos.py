@@ -5,13 +5,13 @@
 ## A tool for Operating Systems                    ##
 ## https://voidsecurity.ml                         ##
 ## Coded by: drk                                   ##
-##                                                 ##
 #####################################################
 
 # Imports
 import os
 import sys 
 import platform
+from click import option
 from colorama import Fore
 import pyfade
 import time
@@ -27,7 +27,7 @@ def clearcmd():
 def back():
     input(f"{Fore.YELLOW}Press enter to go back.")
 def banner():
-  print(pyfade.Fade.Horizontal(pyfade.Colors.blue_to_cyan, """
+  print(pyfade.Fade.Horizontal(pyfade.Colors.red_to_black, """
    DRK OS Alpha (0.9)
     ██████╗ ██████╗ ██╗  ██╗     ██████╗ ███████╗
     ██╔══██╗██╔══██╗██║ ██╔╝    ██╔═══██╗██╔════╝
@@ -82,9 +82,8 @@ def main():
         options()
         
     except KeyboardInterrupt:
-        print(f"Interrupted. {Fore.RED}Quitting..")
+        print(f"Interrupted. {Fore.RED}Going back to main menu.")
         time.sleep(1)
         clearcmd()
-        quit()
-
+        options()
 main()
